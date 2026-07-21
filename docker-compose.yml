@@ -1,0 +1,84 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - timescaledb
+      - neo4j
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    depends_on:
+      - backend
+
+  timescaledb:
+    image: timescale/timescaledb:latest-pg14
+    environment:
+      POSTGRES_PASSWORD: example
+      POSTGRES_USER: postgres
+      POSTGRES_DB: timeseries
+    ports:
+      - "5432:5432"
+
+  neo4j:
+    image: neo4j:5
+    environment:
+      NEO4J_AUTH: neo4j/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    ports:
+      - "1883:1883"
+
+  mqtt_ingest:
+    build: ./backend
+    command: python -m backend.app.mqtt_ingest
+    env_file:
+      - .env
+    depends_on:
+      - mqtt
+      - timescaledb
+
+  vision:
+    build:
+      context: .
+      dockerfile: vision/Dockerfile
+    environment:
+      - BACKEND_URL=http://backend:8000
+      - RTSP_SOURCE=${RTSP_SOURCE:-rtsp://localhost:8554/live}
+      - HEALTH_PORT=8080
+      - YOLO_MODEL_PATH=/models/ppe_best.pt
+    volumes:
+      - ./models:/models
+    # Uncomment if using a local USB camera on Linux (RTSP_SOURCE=0)
+    # devices:
+    #   - /dev/video0:/dev/video0
+    depends_on:
+      - backend
+  vision_init:
+    build:
+      context: .
+      dockerfile: vision/Dockerfile
+    command: ["python", "/app/vision/download_model.py", "--url", "${YOLO_MODEL_URL}", "--out", "/models/yolov8x.pt"]
+    volumes:
+      - ./models:/models
+    environment:
+      - YOLO_MODEL_URL=${YOLO_MODEL_URL}
+    restart: "no"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

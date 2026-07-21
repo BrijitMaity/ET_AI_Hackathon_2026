@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+
+# Environment
+.env
+
+# Database
+*.db
+
+# ML Models (too large for GitHub)
+*.pt
+*.onnx
+*.onnx.disabled
+models/ppe_best*
+models/ppe_best_openvino_model/
+
+# Large exports
+*.xlsx
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test images
+test.jpg
+test_empty.jpg
+test_img.jpg
+
+# Misc
+out.txt
+*.zip
+
+# Node (frontend has its own .gitignore too)
+node_modules/

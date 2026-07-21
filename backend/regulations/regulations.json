@@ -1,0 +1,26 @@
+[
+  {
+    "id": "OISD-001",
+    "source": "OISD",
+    "title": "Hot Work Near Flammable Atmospheres",
+    "text": "Hot work shall not be carried out in areas where flammable gases, vapours or combustible dusts are present unless adequate controls are in place.",
+    "keywords": ["hot work", "flammable", "gas", "permit", "hotwork"],
+    "severity": "high"
+  },
+  {
+    "id": "DGMS-001",
+    "source": "DGMS",
+    "title": "Gas Monitoring Requirements",
+    "text": "Continuous gas monitoring is required in confined spaces and areas with potential gas leaks. Exceedance of threshold values must trigger alarms and evacuation procedures.",
+    "keywords": ["gas", "monitor", "gas sensor", "threshold", "alarm"],
+    "severity": "critical"
+  },
+  {
+    "id": "FACT-001",
+    "source": "FactoryAct",
+    "title": "Permit to Work Control",
+    "text": "Work involving risk must be controlled by a written Permit to Work system; permits must be available on site and audited.",
+    "keywords": ["permit", "ptw", "permit-to-work", "permit to work"],
+    "severity": "medium"
+  }
+]

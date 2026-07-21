@@ -1,0 +1,13 @@
+path: d:/hackathon1/hackathon1/dataset
+train: train/images
+val: valid/images
+test: test/images
+nc: 11
+names: ['boots', 'gloves', 'goggles', 'helmet', 'no-boots', 'no-gloves', 'no-goggles', 'no-helmet', 'no-vest', 'person', 'vest']
+
+roboflow:
+  workspace: chandimas-workspace
+  project: construction-safety-monitor-mlpd4
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/chandimas-workspace/construction-safety-monitor-mlpd4/dataset/2

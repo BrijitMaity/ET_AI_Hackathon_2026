@@ -1,0 +1,138 @@
+TEAM NAME AND MEMBER DETAILS
+-----------------------------------
+MEMBERS:
+1. Brijit Maity
+2. [Team Member 2]
+3. [Team Member 3]
+4. [Team Member 4]
+
+THEME:
+AI-Powered Industrial Safety & Compliance Platform:
+(Combating Industrial Hazards, Protocol Violations, and Compliance Lapses using Computer Vision, IoT Telemetry, and LLMs)
+
+TEAM NAME:
+YODHA (or Your Custom Name)
+
+
+PROBLEM STATEMENT & SCOPE
+-----------------------------------
+The Problem: Worker Safety and Regulatory Compliance is Under Attack in Heavy Industries.
+
+Challenges in the Ecosystem:
+1. Manual safety monitoring is reactive, leading to delayed responses to accidents.
+2. Lack of real-time visibility into high-risk zones (e.g., gas leaks, temperature spikes).
+3. Permit violations (e.g., Hot Work in hazardous areas) are difficult to track synchronously.
+4. Compliance audits (Factory Act, OISD, DGMS) are manual, slow, and prone to human error.
+
+Scope of Innovation:
+We are building a real-time Safety AI Platform that:
+1. Uses Computer Vision and IoT Telemetry to detect safety violations (PPE, gas levels).
+2. Leverages LLMs to auto-generate corrective actions and safety briefings.
+3. Provides a live Safety Dashboard and Audit Agent for instant hazard triage and compliance tracking.
+
+
+WORKING BACKWARDS FROM THE CUSTOMER
+-----------------------------------
+Primary Customer:
+Plant Safety Operations & Compliance Officers
+
+Need: Early detection of compound risks (e.g., Gas + Hot Work) and automated compliance auditing.
+Pain Point: Current rule-based alarm systems are isolated, have high false positives, and lack contextual intelligence.
+
+End Users Benefiting:
+- Workers: Protected from hazardous environments and sudden accidents.
+- Shift Managers: Receive clean, prioritized, and auto-resolved alerts without manual triage.
+- Auditors: Live regulatory coverage monitoring without manual paperwork.
+
+Why It Matters:
+Worker safety is core to industrial operations.
+Faster hazard detection = reduced injuries, improved compliance, and zero downtime.
+
+
+SUCCESS METRICS & EXPECTED IMPACT
+-----------------------------------
+Quantifiable Metrics:
+- >95% accuracy in detecting compound risks (IoT + Permits).
+- <2-second latency for critical evacuation alerts (Phase 3 compound risks).
+- 100% automation of routine compliance checks (Factory Act, OISD, DGMS).
+
+Impact to the Plant:
+1. Reduces manual safety patrol and investigation backlog.
+2. Enhances worker safety and operational confidence.
+3. Decreases regulatory fines and shutdown escalations.
+4. Scales safety monitoring with intelligent auto-triage and LLM action-generation.
+
+
+SCALABILITY AND DOMAIN EXPANSION
+-----------------------------------
+Scalable Across Industrial Environments:
+Built for Scale:
+1. Asynchronous Microservices (Python, FastAPI).
+2. Modular AI pipelines (CV detection, LLM generation, State Machine orchestration).
+3. Plug-and-play for other surfaces: Refineries, Manufacturing Plants, Mining.
+
+Expansion Opportunities:
+- Logistics safety (fleet monitoring and yard management).
+- Predictive Maintenance integration (sensor degradation).
+- Wearable IoT integration for personalized worker health telemetry.
+
+
+SYSTEM ARCHITECTURE
+-----------------------------------
+End-to-End Architecture for Real-Time Safety
+
+Flow Overview:
+Telemetry Ingestion -> Ingests live IoT and CV data from camera streams and sensors.
+Golden Path Engine -> State machine monitoring permit conflicts against environment.
+Orchestrator Engine -> Evaluates risk scores and triggers escalations/compound risks.
+LLM-based Action Agent -> Generates corrective actions and regulatory reports via RAG.
+Safety Dashboard -> Real-time React/Next.js interface for triage & alerts.
+
+Tech Stack:
+AI/LLMs: OpenAI, LangChain, OpenCV
+Backend: Python, FastAPI
+Frontend: Next.js, React, Framer Motion, Tailwind CSS
+
+
+DETECTION LOGIC AND CORE DATA FLOW
+-----------------------------------
+How the Detection Pipeline Works:
+Sensor Telemetry (CH4, H2S, Temp): Flags critical thresholds and LEL breaches.
+CV Analysis: Detects PPE violations (e.g., missing vests, unauthorized entry).
+Golden Path State Machine: Monitors permit conflicts (e.g., Pipeline Welding in elevated CH4).
+Alert Generation: Safety AI Dashboard receives categorized events and triggers evacuations in real time.
+
+
+DEEPER INSIGHTS: AUDITS, PERMITS, INCIDENTS
+-----------------------------------
+Quality & Compliance Audit Agent:
+Live coverage against OISD, Factory Act, DGMS. Uses LLM-powered analysis to assess compliance status and dispatches automated corrective actions (e.g., SAP PM work orders) when deviations occur.
+
+Permit Monitor:
+Tracks active permits vs environmental hazards. Visualizes semantic drift in safety conditions over time, immediately revoking permits like Hot Work if compound risks are detected.
+
+RAG Pattern Discovery:
+Discovers root causes from incident logs. Surfaces patterns in safety behavior across time and zones, enabling Trust & Safety teams to investigate systemic protocol loopholes.
+
+
+CHALLENGES AND KEY LEARNING
+-----------------------------------
+Challenges Faced & How We Overcame Them:
+Top Challenges:
+- Simulating real-time compound risks (gas + permits) accurately.
+- Managing application state and synchronization across asynchronous microservices.
+- Real-time inference rendering on the dashboard without lag.
+
+What We Learned:
+- Custom thresholds and orchestrator rules reduce noise.
+- State machines are highly effective for orchestrating complex AI logic and phased scenarios.
+- Live telemetry polling seamlessly updates the frontend when combined with React's Framer Motion.
+
+
+FUTURE SCOPE AND ROADMAP
+-----------------------------------
+What's Next: Future Enhancements
+Upcoming Features:
+- Voice-based AI agents for safety logging (e.g., hands-free hazard reporting).
+- Blockchain-backed safety compliance ledgers.
+- Predictive risk scoring for specific worker profiles and fatigue management.
