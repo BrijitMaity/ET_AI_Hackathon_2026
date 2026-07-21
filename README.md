@@ -1,4 +1,4 @@
-# Safety_OS : AI-Powered Industrial Safety Intelligence Platform 🛡️
+# Safety_AI : AI-Powered Industrial Safety Intelligence Platform 🛡️
 
 **A next-generation computer vision and RAG-powered safety intelligence system designed for heavy industries.**
 
